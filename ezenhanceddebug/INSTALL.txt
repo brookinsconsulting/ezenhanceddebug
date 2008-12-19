@@ -1,0 +1,48 @@
+Applying the patch
+~~~~~~~~~~~~~~~~~~
+
+cd your_ezpublish_root
+cp extension/ezenhanceddebug/patch/ezenhanceddebug.diff .
+patch [--dry-run] -p0 < ezenhanceddebug.diff
+
+Note for windows users
+~~~~~~~~~~~~~~~~~~~~~
+
+The commands mentioned above have to be run inside a command prompt.
+Use "copy" instead of "cp"
+The "patch" command is missing by default from windows installs. You can download
+it from eg. http://sourceforge.net/projects/unxutils
+
+Declaring the extension
+~~~~~~~~~~~~~~~~~~~~~~~
+
+In settings/override/site.ini, add
+ActiveExtensions[]=ezenhanceddebug
+
+in [TemplateSettings] add
+TemplateCompile=disabled
+TemplateCache=disabled
+
+Of course DebugOutput must be enabled ;)
+
+Clear the ini cache, and relaunch the current web page.
+
+IMPORTANT NOTES
+~~~~~~~~~~~~~~~
+
+This extension is provided to help you in your development.
+Do not use it on production environnements. 
+Before rolling out the site make sure this extension is removed.
+
+To revert the kernel patches just do :
+
+cd your/ezpublish/root
+cp extension/ezenhanceddebug/patch/ezenhanceddebug.diff .
+patch [--dry-run] -R -p0 < ezenhanceddebug.diff
+
+Is you use this extension for 4.0, you may notice a lot of errors in
+eztemplateforeachfunction.php. The problem comes from the template engine which
+does not understand a specific template file. To fix this issue you can
+apply the patch located at :
+
+- extension/ezenhanceddebug/patch/content_structure_menu_dynamic.diff

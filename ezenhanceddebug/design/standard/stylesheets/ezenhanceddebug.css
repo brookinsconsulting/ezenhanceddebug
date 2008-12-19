@@ -1,0 +1,60 @@
+#ezenhanceddebug-panel {
+    height:200px;
+    width: 100%;
+    border: 1px solid black;
+    overflow:auto;
+}
+
+table.ezenhanceddebug-datagrid {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.ezenhanceddebug-datagrid thead th { 
+    text-align: left;
+    background-color: #4B4545;
+    background-repeat: no-repeat;
+    background-position: right center;
+    color: white;
+    font-weight: bold;
+    padding: .3em .7em;
+    font-size: .9em;
+    padding-right: 5px;
+}
+
+table.ezenhanceddebug-datagrid thead th a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.0em;
+    background-repeat: no-repeat;
+    background-position: center right;
+    padding-right: 15px;
+}
+
+table.ezenhanceddebug-datagrid thead th.over {
+    background-color: #746B6B;
+    cursor: pointer;
+}
+
+table.ezenhanceddebug-datagrid tbody th {
+    font-weight: bold;
+}
+
+table.ezenhanceddebug-datagrid tbody td, table.ezenhanceddebug-datagrid tbody th {
+    text-align: left;
+    padding: .3em .7em;
+    border-bottom: 1px solid #eee;
+}
+
+table.ezenhanceddebug-datagrid tbody tr.alternate td, table.ezenhanceddebug-datagrid tbody tr.alternate th {
+    background-color: #f1f1f1;
+}
+
+a.showcode {
+    color: black;
+}
+
+hr{
+    height: 5px;
+    background-color: black;
+}
