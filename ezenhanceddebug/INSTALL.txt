@@ -2,7 +2,7 @@ Applying the patch
 ~~~~~~~~~~~~~~~~~~
 
 cd your_ezpublish_root
-cp extension/ezenhanceddebug/patch/ezenhanceddebug.diff .
+cp extension/ezenhanceddebug/patch/<ezpublishversion>/ezenhanceddebug.diff .
 patch [--dry-run] -p0 < ezenhanceddebug.diff
 
 Note for windows users
@@ -37,7 +37,7 @@ Before rolling out the site make sure this extension is removed.
 To revert the kernel patches just do :
 
 cd your/ezpublish/root
-cp extension/ezenhanceddebug/patch/ezenhanceddebug.diff .
+cp extension/ezenhanceddebug/patch/<ezpublishversion>/ezenhanceddebug.diff .
 patch [--dry-run] -R -p0 < ezenhanceddebug.diff
 
 Is you use this extension for 4.0, you may notice a lot of errors in
@@ -45,4 +45,4 @@ eztemplateforeachfunction.php. The problem comes from the template engine which
 does not understand a specific template file. To fix this issue you can
 apply the patch located at :
 
-- extension/ezenhanceddebug/patch/content_structure_menu_dynamic.diff
+- extension/ezenhanceddebug/patch/<ezpublishversion>/content_structure_menu_dynamic.diff

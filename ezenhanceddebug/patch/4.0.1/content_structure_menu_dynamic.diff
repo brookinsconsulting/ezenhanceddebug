@@ -1,0 +1,42 @@
+--- design/admin/templates/contentstructuremenu/content_structure_menu_dynamic.tpl.401	2009-01-07 17:23:37.000000000 +0100
++++ design/admin/templates/contentstructuremenu/content_structure_menu_dynamic.tpl	2009-01-07 17:28:53.000000000 +0100
+@@ -75,15 +75,15 @@
+         *}{ldelim}{*
+             *}{foreach fetch('content','translation_list') as $language}{*
+                 *}"{$language.locale_code|wash(javascript)}":"{$language.intl_language_name|wash(javascript)}"{*
+-                *}{delimiter},{/delimiter}{*
+-            *}{/foreach}{*
++                *}{delimiter},{/delimiter}
++            {/foreach}{*
+         *}{rdelim};
+     this.classes = {*
+         *}{ldelim}{*
+             *}{foreach fetch('class','list_by_groups',hash('group_filter',$filter_groups,'group_filter_type',$filter_type)) as $class}{*
+                 *}"{$class.id}":{ldelim}name:"{$class.name|wash(javascript)}",identifier:"{$class.identifier|wash(javascript)}"{rdelim}{*
+-                *}{delimiter},{/delimiter}{*
+-            *}{/foreach}{*
++                *}{delimiter},{/delimiter}
++            {/foreach}{*
+         *}{rdelim};
+ 
+ {def $iconInfo = icon_info('class')
+@@ -517,7 +517,8 @@
+ 
+ <script type="text/javascript">
+ <!--
+-    var path = [{foreach $module_result.path as $element}{$element.node_id}{delimiter}, {/delimiter}{/foreach}];
++var path = [{foreach $module_result.path as $element}{$element.node_id}{delimiter}, {/delimiter}
++{/foreach}];
+     var autoOpenPath = path;
+ 
+     var treeMenu = new ContentStructureMenu();
+@@ -533,7 +534,8 @@
+         *}"url":{$root_node.url|ezurl},{*
+         *}"modified_subnode":{$root_node.modified_subnode},{*
+         *}"languages":["{$root_node.object.language_codes|implode('", "')}"],{*
+-        *}"class_list":[{foreach fetch('content','can_instantiate_class_list',hash('parent_node',$root_node.node_id, 'filter_type', $filter_type, 'group_id', $filter_groups)) as $class}{$class.id}{delimiter},{/delimiter}{/foreach}]{rdelim};
++            *}"class_list":[{foreach fetch('content','can_instantiate_class_list',hash('parent_node',$root_node.node_id, 'filter_type', $filter_type, 'group_id', $filter_groups)) as $class}{$class.id}{delimiter},{/delimiter}
++{/foreach}]{rdelim};
+ 
+     document.writeln( '<ul id="content_tree_menu">' );
+     document.writeln( treeMenu.generateEntry( rootNode, false, true ) );
