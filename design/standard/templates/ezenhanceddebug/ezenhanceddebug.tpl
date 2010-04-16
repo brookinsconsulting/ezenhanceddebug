@@ -1,8 +1,8 @@
 <link href="{'stylesheets/ezenhanceddebug.css'|ezdesign('no')}" rel="stylesheet" type="text/css" />
 
-<script type="text/javascript" src="{'scripts/jquery/jquery-1.2.1.pack.js'|ezdesign('no')}"></script>
-<script type="text/javascript" src="{'scripts/jquery/jquery.tablesorter.js'|ezdesign('no')}"></script>
-<script type="text/javascript" src="{'scripts/ezenhanceddebug/scripts.js'|ezdesign('no')}"></script>
+<script type="text/javascript" src="{'javascripts/jquery/jquery-1.2.1.pack.js'|ezdesign('no')}"></script>
+<script type="text/javascript" src="{'javascripts/jquery/jquery.tablesorter.js'|ezdesign('no')}"></script>
+<script type="text/javascript" src="{'javascripts/ezenhanceddebug/scripts.js'|ezdesign('no')}"></script>
 
 <h2>eZEnhancedDebug</h2>
 
