@@ -1,0 +1,18 @@
+ eZEnhancedDebug makes you able to profile your templates.
+
+It can help you to see how fast (or slow) your templates are.
+
+Extension features :
+- template operators/function profiling
+- template operators/function filtering (when you do not want to profile some template operators)
+- statistics on your code :
++ median time
++ average time
++ slowest fetch (+ code)
++ number of cache-blocks
+- you can also see a particular piece of code by clicking on the "Show Code" text.
+
+To install please read the file "INSTALL.txt"
+Note 1 : This extension needs some kernel patches, it is not eZ Publish Network / eZ Publish Premium compliant. !!!
+Note 2 : This extension is supposed to be used during development phases, never ever use this extension on production servers, or use it at your own risks !!!!!!
+Note 3 : As you might notice I suck at UI design. the extension looks ugly, I am open to any comment to improve the extension's design.
