@@ -2,7 +2,7 @@
 
 $Module = $Params["Module"];
 
-$tpl = templateInit();
+$tpl = eZTemplate::factory();
 
 $Result['pagelayout'] = '';
 $Result['content'] = $tpl->fetch( "design:ezenhanceddebug/testloopswithdelimiter.tpl" );

@@ -26,9 +26,6 @@
 //
 //
 
-include_once( 'lib/ezutils/classes/ezuri.php' );
-include_once(  'kernel/common/template.php' );
-
 class eZEnhancedDebug
 {
     private function eZEnhancedDebug()
@@ -249,7 +246,7 @@ class eZEnhancedDebug
 
         if( $displaySettings == 'enabled' )
         {
-            $tpl =templateInit();
+            $tpl =eZTemplate::factory();
 
             $tpl->setVariable( 'executionStack'   , $this->ExecutionStack    );
             $tpl->setVariable( 'medianTime'       , $this->getMedianTime()   );

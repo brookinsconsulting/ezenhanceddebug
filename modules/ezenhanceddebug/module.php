@@ -1,7 +1,5 @@
 <?php
 
-include_once( "kernel/common/template.php" );
-
 $Module = array( "name" => "ezenhanceddebug" );
 
 $Views = array();

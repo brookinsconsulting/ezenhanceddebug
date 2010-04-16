@@ -1,7 +1,4 @@
 <?php
-include_once( 'lib/ezutils/classes/ezini.php'  );
-include_once( 'lib/ezutils/classes/ezhttptool.php' );
-include_once( 'extension/ezenhanceddebug/classes/ezenhanceddebug.php' );
 
 // remove any debug informations in this page
 $ini = eZINI::instance( 'site.ini' );

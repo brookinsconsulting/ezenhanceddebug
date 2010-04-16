@@ -2,7 +2,7 @@
 
 $Module = $Params["Module"];
 
-$tpl = templateInit();
+$tpl = eZTemplate::factory();
 
 $extensionDir = 'extension/ezenhanceddebug/modules/ezenhanceddebug/';
 $excludedFiles = array( $extensionDir . 'testall.php', 
