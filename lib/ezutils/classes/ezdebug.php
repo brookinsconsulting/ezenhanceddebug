@@ -1787,6 +1787,7 @@ td.timingpoint2
 
         if ( $as_html )
         {
+            $this->eZEnhancedDebug->generateKCacheGrindTree();
             echo $this->eZEnhancedDebug->displayExecutionStack();
         }
 

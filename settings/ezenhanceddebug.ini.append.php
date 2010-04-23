@@ -3,6 +3,10 @@
 [DisplaySettings]
 DisplayResultTable=enabled
 
+[ProfilerSettings]
+Profiler=enabled
+ProfilerOutputDir=/tmp/ezenhanceddebug
+
 [FilterSettings]
 UseOperatorFilters=enabled
 OperatorFilters[]

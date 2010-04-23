@@ -246,7 +246,7 @@ class eZEnhancedDebug
 
         if( $displaySettings == 'enabled' )
         {
-            $tpl =eZTemplate::factory();
+            $tpl = eZTemplate::factory();
 
             $tpl->setVariable( 'executionStack'   , $this->ExecutionStack    );
             $tpl->setVariable( 'medianTime'       , $this->getMedianTime()   );
@@ -258,6 +258,52 @@ class eZEnhancedDebug
             return $tpl->fetch( "design:ezenhanceddebug/ezenhanceddebug.tpl" );
         }
         return;
+    }
+
+    public function generateKCacheGrindTree()
+    {
+        $ini = eZINI::instance( 'ezenhanceddebug.ini' );
+
+        if( $ini->variable( 'ProfilerSettings', 'Profiler' ) != 'enabled' )
+        {
+            return false;
+        }
+
+        $callTreeLineList = array();
+        $callTreeLineList[] = 'version: 1';
+        $callTreeLineList[] = 'eZ Enhanced Debug extension by Jerome Renard';
+        $callTreeLineList[] = 'part: 1';
+
+        $eZURI = eZURI::instance( eZSys::requestURI() );
+        $urlAlias = $eZURI->originalURIString(true);
+        if( $urlAlias == '/' )
+            $urlAlias = 'index-page';
+
+        $callTreeLineList[] = "cmd: {$urlAlias}";
+
+        $callTreeLineList[] = '';
+        $callTreeLineList[] = 'events: Time(milliseconds)';
+        $callTreeLineList[] = '';
+        $tmpExecutionTime = 0;
+
+        foreach( $this->ExecutionStack as  $execution )
+        {
+            $tmpExecutionTime = $execution['time'] * 10e3;
+
+            $callTreeLineList[] = 'fl=' . realpath( $execution['file'] );
+            $callTreeLineList[] = "fn={$execution['operator']}";
+            $callTreeLineList[] = "{$execution['linestart']} {$tmpExecutionTime}";
+            $callTreeLineList[] = '';
+        }
+
+        $result = join( "\n", $callTreeLineList );
+
+        $trans = eZCharTransform::instance();
+        $filename = $trans->transformByGroup( $urlAlias, 'identifier' );
+
+        eZFile::create(
+            "{$filename}.out", $ini->variable( 'ProfilerSettings', 'ProfilerOutputDir' ), $result
+        );
     }
 
     private $ExecutionStack  = array();
