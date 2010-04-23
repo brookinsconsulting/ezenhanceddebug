@@ -12,7 +12,6 @@ Extension features :
 + number of cache-blocks
 - you can also see a particular piece of code by clicking on the "Show Code" text.
 
-To install please read the file "INSTALL.txt"
-Note 1 : This extension needs some kernel patches, it is not eZ Publish Network / eZ Publish Premium compliant. !!!
-Note 2 : This extension is supposed to be used during development phases, never ever use this extension on production servers, or use it at your own risks !!!!!!
-Note 3 : As you might notice I suck at UI design. the extension looks ugly, I am open to any comment to improve the extension's design.
+To install please read the file "INSTALL"
+Note 1 : This extension is supposed to be used during development phases, never ever use this extension on production servers, or use it at your own risks !!!!!!
+Note 2 : As you might notice I suck at UI design. the extension looks ugly, I am open to any comment to improve the extension's design.
