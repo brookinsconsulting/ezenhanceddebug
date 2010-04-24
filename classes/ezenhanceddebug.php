@@ -290,8 +290,16 @@ class eZEnhancedDebug
         {
             $tmpExecutionTime = $execution['time'] * 10e3;
 
+            $lastSlashPos = strrpos( $execution['file'], '/' );
+
+            $templateName = substr(
+                $execution['file'],
+                $lastSlashPos + 1,
+                strlen( $execution['file'] ) - $lastSlashPos - 5 // removes '.tpl'
+            );
+
             $callTreeLineList[] = 'fl=' . realpath( $execution['file'] );
-            $callTreeLineList[] = "fn={$execution['operator']}";
+            $callTreeLineList[] = "fn={$templateName}::{$execution['operator']}";
             $callTreeLineList[] = "{$execution['linestart']} {$tmpExecutionTime}";
             $callTreeLineList[] = '';
         }
