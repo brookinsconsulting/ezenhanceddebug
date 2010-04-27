@@ -4,6 +4,10 @@
 AnonymousAccessList[]=ezenhanceddebug/pieceofcode
 
 [RoleSettings]
-PolicyOmitList[]=ezenhanceddebug/pieceofcode
+PolicyOmitList[]=ezenhanceddebug
+
+[TemplateSettings]
+ExtensionAutoloadPath[]=ezenhanceddebug
+
 */
 ?>
