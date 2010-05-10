@@ -10,6 +10,7 @@ Extension features :
 + average time
 + slowest fetch (+ code)
 + number of cache-blocks
++ border on cache-blocks so you know where they are
 - you can also see a particular piece of code by clicking on the "Show Code" text.
 
 To install please read the file "INSTALL"
