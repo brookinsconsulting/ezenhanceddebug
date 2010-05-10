@@ -22,6 +22,7 @@ of your eZ Publish instance, with the following contents: ::
 And then regenerate the autoload arrays: ::
 
     php ./bin/php/ezpgenerateautoloads -o -p
+    php ./bin/php/ezpgenerateautoloads -e -p
 
 
 Final step
