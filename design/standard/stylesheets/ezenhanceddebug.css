@@ -58,3 +58,7 @@ hr{
     height: 5px;
     background-color: black;
 }
+
+.cache-block-border {
+    border: 1px solid black;
+}
